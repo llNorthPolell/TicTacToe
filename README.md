@@ -13,5 +13,5 @@ notepad since I can't install anything from a company computer.
 Tools Used
 ----------
 
-Notepad - To publish code
-W3Schools Tryit Editor - for coding and testing
+- Notepad - To publish code
+- W3Schools Tryit Editor - for coding and testing
