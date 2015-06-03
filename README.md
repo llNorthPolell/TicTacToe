@@ -15,3 +15,9 @@ Tools Used
 
 - Notepad - To publish code
 - W3Schools Tryit Editor - for coding and testing
+
+
+Known Bugs
+----------
+- Winning by completing multiple lines / filling the boar completedly at the same time causes multiple alerts to pop up. 
+- Buttons are not aligned
