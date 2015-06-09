@@ -1,0 +1,23 @@
+body {
+   text-align: center;
+   background-color:black;
+   width:100%;
+   height:100%;
+}
+
+h1 {
+   color: blue; 
+}
+
+p.text {
+   color: white;
+}
+
+input[type=button] {
+    border: 3px outset blue;
+    color: blue;
+    background-color: #2B2B2B;
+    width: 5%;
+    height:200%;
+    font-size: 200%;
+}
