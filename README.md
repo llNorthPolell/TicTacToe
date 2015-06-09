@@ -22,3 +22,4 @@ Tools Used
 Known Bugs
 ----------
 - clicking the "Player X wins!" or "~EPIC DRAW~" adds a new game directly to the right of the current one
+- with the above bug, any unfilled buttons can still be filled with X's and O's, but this is only a visual bug which could be eliminated by eliminating the above bug
