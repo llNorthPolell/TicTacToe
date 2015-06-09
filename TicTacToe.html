@@ -1,6 +1,9 @@
-Enter file <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
+
+<link rel="stylesheet" type="text/css" href="tictactoe.css">
+
 <script>
 
 var turnCtr = 0;
@@ -27,7 +30,7 @@ function init(){
           board[y][x].value = empty;
           board[y][x].id="cell"+x+y; 
           board[y][x].onmouseup = function(){ 
-              if (this.value==empty){
+              if (this.value==empty && playing){
                  this.value = players[turnCtr];
                  checkWin();
                  passTurn();
@@ -49,12 +52,9 @@ function clickPlay(){
      playing = 1;
      init ();
      document.getElementById("PlayButton").innerHTML = "Now Playing";
+     document.getElementById("PlayButton").style.color = "yellow";
    }
               
-}
-
-function compare(a,b){
-   return a.value==b.value
 }
 
 function checkRow(row){
@@ -69,16 +69,13 @@ function checkRow(row){
 }
 
 
-
 function checkColumn(column){
    var values=new Array(3);
    for (var i = 0; i<board.length; i++){
       values[i]= board[i][column].value;
       if (values[i]==empty) return false;
    }
-
    return (values[0]== values[1] && values[1]==values[2]);
-
 }
 
 function checkDescendingDiagonal(){
@@ -103,15 +100,27 @@ function checkAscendingDiagonal(){
 }
 
 function checkWin(){
+    if (checkDraw()) draw();
+    
     for (var i =0 ; i < board.length; i++){
-       if (checkRow(i)) alert("Player "+(turnCtr+1)+" wins!");
-       if (checkColumn(i)) alert("Player "+(turnCtr+1)+" wins!");
-    }
-    if (checkDescendingDiagonal()) alert("Player "+(turnCtr+1)+" wins!");
-    if (checkAscendingDiagonal()) alert("Player "+(turnCtr+1)+" wins!");
+       if (checkRow(i)) win();
+       if (checkColumn(i)) win();    }
+    if (checkDescendingDiagonal()) win();
+    if (checkAscendingDiagonal()) win();
+}
 
-    if (checkDraw()) alert ("EPIC DRAW");
- 
+function draw(){
+   document.getElementById("PlayButton").innerHTML = "~EPIC DRAW~";
+   document.getElementById("PlayButton").color = "red";	
+   playing = false;
+}
+
+
+function win(){
+
+   document.getElementById("PlayButton").innerHTML = "Player "+(turnCtr+1)+" wins!";
+   document.getElementById("PlayButton").color = "green";
+   playing = false; 
 }
 
 function checkDraw(){
@@ -128,10 +137,9 @@ function checkDraw(){
 </head>
 <body>
 <h1> Tic Tac Toe </h1>
-<p id ="PlayButton" onmouseup="clickPlay()">
+<p class = "text" id ="PlayButton" onmouseup="clickPlay()">
 Play
 </p>
 
 </body>
 </html>
-contents here
