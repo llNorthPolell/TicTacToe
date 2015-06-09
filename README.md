@@ -21,5 +21,4 @@ Tools Used
 
 Known Bugs
 ----------
-- Winning by completing multiple lines / filling the boar completedly at the same time causes multiple alerts to pop up. 
-- Buttons are not aligned
+- clicking the "Player X wins!" or "~EPIC DRAW~" adds a new game directly to the right of the current one
