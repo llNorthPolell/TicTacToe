@@ -9,8 +9,17 @@ h1 {
    color: blue; 
 }
 
-p.text {
+p.status {
    color: white;
+}
+
+input[type=button].play {
+    border: 3px outset green;
+    color: green;
+    background-color: #2B2B2B;
+    width: 25%;
+    height:200%;
+    font-size: 200%;
 }
 
 input[type=button] {
